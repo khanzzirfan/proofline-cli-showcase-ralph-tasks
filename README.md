@@ -13,6 +13,15 @@ Everything here happened on 17 November 2026. Times come from the logs in this r
 | after 14:07 | **Check against the field.** A separate, agent-run review of the open PRs and the public API, checked by a second agent. | The extension was crowded (21 open applicant PRs, 4 of them on redaction). The CLI's contract had `request_scan`, which no command used and no applicant PR touched. |
 | by 18:08 | **Build and review `proofline scan`.** Built with an agent, then a review pass for failure paths found 6 issues, all fixed. | 9 new integration tests; fmt, clippy and every test target pass. Details in the PR. |
 
+```mermaid
+flowchart LR
+    A["Ralph build<br/>iterExportReviews<br/>3 stories, 1 min 50 s"] --> B["Ralph research<br/>8 turns, 7 models<br/>run-chain.sh + watchdog"]
+    B --> C["compare.py<br/>FINAL-RANKING.md"]
+    C --> D["Field check<br/>open PRs vs public API"]
+    D -- "extension crowded,<br/>request_scan unused" --> E["proofline scan<br/>build, review, fix"]
+    E --> F["PR + demo GIF"]
+```
+
 The research did not pick `proofline scan`. It mapped what hurts people who hand bugs to coding agents, and its pick was an extension feature. I switched because of what the field check found. The research still shaped the design: it showed that the useful work is turning evidence into something an agent or a CI job can act on.
 
 ## 1. Building with Ralph ([`ralph-build/`](ralph-build/))
@@ -92,6 +101,12 @@ It came from comparing the operations in the CLI's `openapi.public.json` with th
 - Every server outcome is handled explicitly.
 
 The PR description covers the decisions and the tests. The prompts I used are in a hidden comment in the PR body, as the repository's `AGENTS.md` asks.
+
+### Demo ([`demo/`](demo/))
+
+![proofline scan against a local stand-in for the API](demo/scan-demo.gif)
+
+The recording runs the real CLI binary against [`mock_console.py`](demo/mock_console.py), a local stand-in for the three endpoints `proofline scan` uses. It is not Proofline's API, and the review content is made up. [`scan-demo.tape`](demo/scan-demo.tape) is the [VHS](https://github.com/charmbracelet/vhs) script that recorded it; `PROOFLINE_BIN=/path/to/proofline vhs scan-demo.tape` re-renders it.
 
 ## Notes
 
