@@ -1,0 +1,12 @@
+# Shared Ralph config for the pain research. Rewritten by run-turn.sh at the start of each turn.
+# Current turn: 8 (8-claude-opus), started 2026-11-17 13:41:27
+configVersion = "2.1"
+tracker = "json"
+agent = "claude"
+maxIterations = 15
+autoCommit = false
+envPassthrough = ["CMDC_KEY"]
+
+[trackerOptions]
+[agentOptions]
+model = "opus"

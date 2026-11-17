@@ -1,0 +1,281 @@
+{
+  "agent": "2-minimax-m3.1-flash",
+  "generated": "2026-11-17",
+  "nodes": [
+    {
+      "id": "P01",
+      "title": "The agent has no console, no network panel and no DOM, so it guesses at frontend bugs",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 4,
+      "novelty": 4,
+      "pain_score": 16,
+      "pick_score": 34,
+      "verified_sources": 5,
+      "overlapping_prs": [22, 29],
+      "feature_idea": "Deliver the recorded console/network/DOM evidence to the agent as one copyable bundle (the same delivery as P03).",
+      "top_sources": [
+        "https://forum.cursor.com/t/the-agent-cannot-access-the-network-and-the-browser-console-which-opens-inside-the-cursor-as-a-separate-tab/152452",
+        "https://github.com/anthropics/claude-code/issues/57034",
+        "https://forum.cursor.com/t/web-cursor-agent-browser-tool-not-capturing-rendered-dom-elements-on-my-site/178559"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "Copy-paste is the hand-off, and the paste arrives mangled or not at all",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 5,
+      "smallness": 4,
+      "novelty": 4,
+      "pain_score": 14,
+      "pick_score": 32,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "One 'Copy for AI agent' action that puts the clean report on the clipboard instead of relying on a terminal paste.",
+      "top_sources": [
+        "https://forum.cursor.com/t/integration-with-developer-tool/34824",
+        "https://forum.cursor.com/t/when-i-try-to-copy-and-paste-debug-terminal-output-the-agent-can-no-longer-see-it/58803",
+        "https://github.com/anthropics/claude-code/issues/18170"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "People want to hand a bug straight to an agent, and this recorder has no channel to do it",
+      "frequency": 5,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 4,
+      "novelty": 5,
+      "pain_score": 18,
+      "pick_score": 37,
+      "verified_sources": 11,
+      "overlapping_prs": [22, 23, 24, 48],
+      "feature_idea": "One click copies an agent-ready bundle (trimmed report.md plus the suggested prompt) to the clipboard.",
+      "top_sources": [
+        "https://forum.cursor.com/t/integration-with-developer-tool/34824",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/issues/96",
+        "https://news.ycombinator.com/item?id=48413629",
+        "https://github.com/anthropics/claude-code/issues/18170"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "The issue an agent starts from arrives with no visual evidence in it",
+      "frequency": 3,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 3,
+      "novelty": 4,
+      "pain_score": 14,
+      "pick_score": 31,
+      "verified_sources": 4,
+      "overlapping_prs": [24, 48],
+      "feature_idea": "Upload the annotated screenshots as native GitHub attachments on the issue the extension files.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/101957",
+        "https://github.com/anthropics/claude-code/issues/26831",
+        "https://github.com/orgs/community/discussions/169913"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "The evidence carries secrets and personal data, and nothing masks it before it leaves the browser",
+      "frequency": 3,
+      "severity": 5,
+      "fit": 4,
+      "smallness": 2,
+      "novelty": 1,
+      "pain_score": 16,
+      "pick_score": 27,
+      "verified_sources": 5,
+      "overlapping_prs": [31, 37, 38, 42, 44],
+      "feature_idea": "Extend redaction to screenshots, narration and video - crowded ground, five open PRs already claim it.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/66044",
+        "https://github.com/anthropics/claude-code/issues/44868",
+        "https://klavity.in/blog/redact-pii-and-secrets-from-bug-reports"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "An AI reviewer or PR agent cannot see the UI the change produces",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 4,
+      "pain_score": 16,
+      "pick_score": 31,
+      "verified_sources": 5,
+      "overlapping_prs": [22, 29],
+      "feature_idea": "Attach the reporter's annotated 'what it looked like' evidence to the PR as a visual baseline.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/57034",
+        "https://github.com/anthropics/claude-code/issues/75632",
+        "https://github.com/orgs/community/discussions/169913"
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "The customer or QA report arrives as words, and the words lose the evidence",
+      "frequency": 3,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 14,
+      "pick_score": 29,
+      "verified_sources": 5,
+      "overlapping_prs": [],
+      "feature_idea": "Keep the captured console and network with the report all the way into the agent instead of trimming to text.",
+      "top_sources": [
+        "https://forum.cursor.com/t/i-m-building-annotatefix-to-bring-customer-bug-reports-and-browser-evidence-to-your-coding-agent/174630",
+        "https://github.com/anthropics/claude-code/issues/101957",
+        "https://news.ycombinator.com/item?id=45035578"
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "A CLI agent has no way to take a screenshot or read an image, so the bug stays a story",
+      "frequency": 5,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 3,
+      "novelty": 3,
+      "pain_score": 18,
+      "pick_score": 34,
+      "verified_sources": 12,
+      "overlapping_prs": [29, 32, 43],
+      "feature_idea": "Write the screenshot files next to report.md with explicit paths the agent can open.",
+      "top_sources": [
+        "https://forum.cursor.com/t/subject-image-copy-paste-in-cursor-chat-stopped-working/167990",
+        "https://forum.cursor.com/t/custom-api-models-cannot-read-local-image-file-paths-pasted-images-work/167497",
+        "https://github.com/github/copilot-cli/issues/476",
+        "https://github.com/anthropics/claude-code/issues/12644",
+        "https://github.com/openai/codex/issues/2221"
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "A bug video is dead weight for an agent: it cannot watch it",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 1,
+      "novelty": 4,
+      "pain_score": 12,
+      "pick_score": 23,
+      "verified_sources": 6,
+      "overlapping_prs": [],
+      "feature_idea": "Turn the recorded video into keyframes plus a timeline - a large feature in a crowded market.",
+      "top_sources": [
+        "https://github.com/bradautomates/claude-video",
+        "https://github.com/teunlao/vidin",
+        "https://cobaltcapture.com/guides/why-loom-doesnt-work-with-agents"
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "Nobody can prove the fix worked - the agent asserts it is done without ever looking",
+      "frequency": 4,
+      "severity": 5,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 3,
+      "pain_score": 18,
+      "pick_score": 32,
+      "verified_sources": 5,
+      "overlapping_prs": [22, 29],
+      "feature_idea": "Put the reporter's annotated evidence into the PR so the fix claim arrives with a picture.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/89736",
+        "https://github.com/anthropics/claude-code/issues/37818",
+        "https://github.com/orgs/community/discussions/169913"
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "The report does not say which environment the bug happened in",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 2,
+      "novelty": 2,
+      "pain_score": 16,
+      "pick_score": 28,
+      "verified_sources": 7,
+      "overlapping_prs": [29, 41],
+      "feature_idea": "One 'environment' block in the report (viewport, host, auth state, deployed URL) - must be designed around #29 and #41.",
+      "top_sources": [
+        "https://forum.cursor.com/t/ide-chat-should-know-the-browsers-viewport-dimensions/167105",
+        "https://github.com/anthropics/claude-code/issues/57034",
+        "https://github.com/anthropics/claude-code/issues/11791"
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "The issue queue fills with agent-written duplicates that a human has to triage",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 2,
+      "pain_score": 16,
+      "pick_score": 26,
+      "verified_sources": 6,
+      "overlapping_prs": [49],
+      "feature_idea": "Reporter-side duplicate check before filing - mostly a GitHub-platform problem, #49 claims the grouping half.",
+      "top_sources": [
+        "https://github.blog/changelog/2026-06-18-duplicate-detection-and-issue-fields-mcp-support-for-github-issues/",
+        "https://github.com/fullsend-ai/agents/issues/899",
+        "https://github.com/github/gh-aw/issues/38842"
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "The evidence is too big and nobody knows what it will cost to feed it to the agent",
+      "frequency": 3,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 1,
+      "pain_score": 14,
+      "pick_score": 26,
+      "verified_sources": 5,
+      "overlapping_prs": [],
+      "feature_idea": "Show the estimated token cost next to the trim-level picker - the capability itself already exists.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/21230",
+        "https://github.com/openai/codex/issues/31040",
+        "https://github.com/anthropics/claude-code/issues/9152"
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "The agent cannot reach the app the user is testing, so it cannot even reproduce the bug",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 2,
+      "smallness": 2,
+      "novelty": 3,
+      "pain_score": 16,
+      "pick_score": 25,
+      "verified_sources": 6,
+      "overlapping_prs": [],
+      "feature_idea": "None - a proxy and an egress allowlist are not a Chrome extension's problem; only capture the failure evidence.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/93201",
+        "https://github.com/anthropics/claude-code/issues/11791",
+        "https://github.com/anthropics/claude-code/issues/75632"
+      ]
+    }
+  ],
+  "pain_rank": ["P03", "P08", "P10", "P01", "P06", "P11", "P05", "P12", "P14", "P02", "P04", "P07", "P13", "P09"],
+  "pick_rank": ["P03", "P08", "P01", "P10", "P02", "P06", "P04", "P07", "P11", "P05", "P12", "P13", "P14", "P09"],
+  "top_pick": {
+    "node": "P03",
+    "feature": "One click copies an agent-ready bundle (trimmed report.md plus the suggested prompt) to the clipboard, so a recorded browser bug reaches a coding agent without export, unzip and paste."
+  }
+}

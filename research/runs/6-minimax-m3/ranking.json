@@ -1,0 +1,396 @@
+{
+  "agent": "minimaxai/minimax-m3",
+  "generated": "2026-11-17",
+  "nodes": [
+    {
+      "id": "P01",
+      "title": "My agent can't see the browser - no console, no network, no rendered DOM",
+      "frequency": 5,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 2,
+      "pain_score": 18,
+      "pick_score": 31,
+      "verified_sources": 6,
+      "overlapping_prs": [
+        29,
+        32,
+        39,
+        40
+      ],
+      "feature_idea": "Ship the captured console/network/DOM snapshot as a first-class agent-readable section of report.md.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/57034",
+        "https://github.com/anthropics/claude-code/issues/75632",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "I paste console logs into the agent by hand and the paste is mangled",
+      "frequency": 5,
+      "severity": 3,
+      "fit": 5,
+      "smallness": 5,
+      "novelty": 1,
+      "pain_score": 16,
+      "pick_score": 32,
+      "verified_sources": 3,
+      "overlapping_prs": [
+        42,
+        37,
+        31
+      ],
+      "feature_idea": "One 'Copy for agent' action that puts a clean prompt plus the trimmed report on the clipboard.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/18170",
+        "https://news.ycombinator.com/item?id=48795580",
+        "https://forum.cursor.com/t/when-i-try-to-copy-and-paste-debug-terminal-output-the-agent-can-no-longer-see-it/58803"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "I want to hand the bug straight to the agent instead of retyping it",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 2,
+      "pain_score": 16,
+      "pick_score": 30,
+      "verified_sources": 5,
+      "overlapping_prs": [
+        48
+      ],
+      "feature_idea": "Hand the recorded session to the agent through the existing share/issue flow rather than retyping it.",
+      "top_sources": [
+        "https://forum.cursor.com/t/i-m-building-annotatefix-to-bring-customer-bug-reports-and-browser-evidence-to-your-coding-agent/174630",
+        "https://news.ycombinator.com/item?id=48795580"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "Agents can't watch a bug video - I have to turn it into frames and text myself",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 3,
+      "novelty": 2,
+      "pain_score": 16,
+      "pick_score": 31,
+      "verified_sources": 8,
+      "overlapping_prs": [
+        21,
+        25,
+        29
+      ],
+      "feature_idea": "A local 'visual brief': narration transcript + click targets + change-detected frames, rendered to text for the agent.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/12676",
+        "https://github.com/clipy-recorder/clipy-mcp",
+        "https://chromewebstore.google.com/detail/thinkrun-screen-recorder-for/affbcanbhbnolapiokgjnkfjccdmefmd"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "The agent can't consume my screenshots: paste fails, images dropped/resized, oversized ones kill the session",
+      "frequency": 5,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 2,
+      "pain_score": 18,
+      "pick_score": 31,
+      "verified_sources": 7,
+      "overlapping_prs": [
+        21,
+        29
+      ],
+      "feature_idea": "Tell the agent which screenshot file to open, and deliver the bytes (image paste / attachment path) instead of a dead markdown link.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/13480",
+        "https://github.com/github/copilot-cli/issues/2675",
+        "https://forum.cursor.com/t/ctrl-v-image-paste-always-fails-on-macos-execfile-missing-encodingbuffer/176096"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "Nobody can prove the fix worked - agents fabricate screenshots and reviewers accept them",
+      "frequency": 3,
+      "severity": 5,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 3,
+      "pain_score": 16,
+      "pick_score": 27,
+      "verified_sources": 4,
+      "overlapping_prs": [
+        39,
+        41,
+        49
+      ],
+      "feature_idea": "Attach the recorded evidence to the fix so a reviewer can verify it against the original failure.",
+      "top_sources": [
+        "https://github.com/Microsoft/vscode-pull-request-github/issues/7770",
+        "https://github.com/anthropics/claude-code/issues/75632"
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "The PR reviewer cannot see the UI the change produces",
+      "frequency": 3,
+      "severity": 4,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 3,
+      "pain_score": 14,
+      "pick_score": 25,
+      "verified_sources": 3,
+      "overlapping_prs": [
+        48,
+        29
+      ],
+      "feature_idea": "Give the reviewer the before/after screenshots from the recording session.",
+      "top_sources": [
+        "https://github.com/orgs/community/discussions/169913",
+        "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/provide-visual-inputs"
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "The agent can't log in, so it can't reproduce the bug behind the login",
+      "frequency": 3,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 3,
+      "pain_score": 14,
+      "pick_score": 28,
+      "verified_sources": 4,
+      "overlapping_prs": [
+        42,
+        37,
+        31
+      ],
+      "feature_idea": "Record from the already-authenticated browser so the agent never needs a password.",
+      "top_sources": [
+        "https://forum.cursor.com/t/can-not-login-to-aws-via-cursors-browser/162714",
+        "https://github.com/anthropics/claude-code/issues/82668"
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "The report is filed but the agent never picks it up - the trigger is missing",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 5,
+      "novelty": 2,
+      "pain_score": 12,
+      "pick_score": 27,
+      "verified_sources": 3,
+      "overlapping_prs": [
+        48
+      ],
+      "feature_idea": "Add an agent trigger and an agent instructions block to the filed GitHub issue.",
+      "top_sources": [
+        "https://github.com/microsoft/hve-core/blob/main/.github/agents/issue-triage.agent.md",
+        "https://github.com/orgs/community/discussions/169913"
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "If I can't reproduce it, it doesn't get fixed - and a recording is not a reproduction",
+      "frequency": 4,
+      "severity": 5,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 2,
+      "pain_score": 18,
+      "pick_score": 28,
+      "verified_sources": 5,
+      "overlapping_prs": [
+        22,
+        25,
+        40
+      ],
+      "feature_idea": "Emit a deterministic step list from the recorded events that a human or agent can replay.",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=42647248",
+        "https://news.ycombinator.com/item?id=50339913"
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "Recording the browser means recording my passwords, tokens and customer data",
+      "frequency": 4,
+      "severity": 5,
+      "fit": 3,
+      "smallness": 4,
+      "novelty": 1,
+      "pain_score": 18,
+      "pick_score": 29,
+      "verified_sources": 5,
+      "overlapping_prs": [
+        42,
+        44,
+        38,
+        37,
+        31
+      ],
+      "feature_idea": "Record the credential TYPE (a password was typed at 0:11) without recording its value.",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=49466704",
+        "https://github.com/anthropics/claude-code/issues/82668",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "The agent says the task is done but nothing changed - false completion",
+      "frequency": 3,
+      "severity": 4,
+      "fit": 3,
+      "smallness": 3,
+      "novelty": 3,
+      "pain_score": 14,
+      "pick_score": 26,
+      "verified_sources": 4,
+      "overlapping_prs": [
+        33,
+        41
+      ],
+      "feature_idea": "Make the recorded evidence the thing the agent must reconcile against before it claims success.",
+      "top_sources": [
+        "https://github.com/Microsoft/vscode-pull-request-github/issues/7770",
+        "https://forum.cursor.com/t/misleading-browser-debugging-difficulty-with-complex-backend-tasks-terminal-process-stuck-and-disrupting-previously-corrected-code/145211"
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "The person reporting the bug doesn't know how to describe it to an agent",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 2,
+      "pain_score": 16,
+      "pick_score": 29,
+      "verified_sources": 4,
+      "overlapping_prs": [
+        48
+      ],
+      "feature_idea": "Let a non-technical reporter record a bug with markers and narration, and generate the description from that.",
+      "top_sources": [
+        "https://forum.cursor.com/t/i-m-building-annotatefix-to-bring-customer-bug-reports-and-browser-evidence-to-your-coding-agent/174630",
+        "https://chromewebstore.google.com/detail/darnly-bug-reports-for-ai/gognoljafcabnmbbpfoeeamcflpbgidj"
+      ]
+    },
+    {
+      "id": "P15",
+      "title": "Copying the report to the agent is already a feature - the category is crowded *(constraint node)*",
+      "frequency": 5,
+      "severity": 2,
+      "fit": 2,
+      "smallness": 1,
+      "novelty": 0,
+      "pain_score": 14,
+      "pick_score": 19,
+      "verified_sources": 5,
+      "overlapping_prs": [],
+      "feature_idea": "Not a feature - this node exists to cap the novelty of P02, P03 and P05.",
+      "top_sources": [
+        "https://chromewebstore.google.com/detail/darnly-bug-reports-for-ai/gognoljafcabnmbbpfoeeamcflpbgidj",
+        "https://chromewebstore.google.com/detail/thinkrun-screen-recorder-for/affbcanbhbnolapiokgjnkfjccdmefmd"
+      ]
+    },
+    {
+      "id": "P16",
+      "title": "A bug report the agent can't prove - 'I can't tell' beats a wrong yes",
+      "frequency": 3,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 3,
+      "novelty": 4,
+      "pain_score": 14,
+      "pick_score": 31,
+      "verified_sources": 3,
+      "overlapping_prs": [
+        39,
+        41,
+        49
+      ],
+      "feature_idea": "A deterministic three-valued verdict (pass/fail/unverified) plus a not-a-bug state, computed from the recorded evidence.",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=50339913",
+        "https://github.com/Microsoft/vscode-pull-request-github/issues/7770",
+        "https://github.com/clipy-recorder/clipy-mcp"
+      ]
+    },
+    {
+      "id": "P17",
+      "title": "Evidence is expensive: screenshots eat the window and each agent run costs money",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 3,
+      "novelty": 1,
+      "pain_score": 16,
+      "pick_score": 30,
+      "verified_sources": 6,
+      "overlapping_prs": [
+        29,
+        40,
+        41,
+        47
+      ],
+      "feature_idea": "Surface the token estimate and let the user edit the copied block before it reaches the agent.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/16592",
+        "https://news.ycombinator.com/item?id=50339913",
+        "https://chromewebstore.google.com/detail/vibe-annotations-visual-f/gkofobaeeepjopdpahbicefmljcmpeof/reviews"
+      ]
+    }
+  ],
+  "pain_rank": [
+    "P01",
+    "P05",
+    "P12",
+    "P11",
+    "P02",
+    "P04",
+    "P03",
+    "P17",
+    "P14",
+    "P06",
+    "P16",
+    "P08",
+    "P13",
+    "P07",
+    "P15",
+    "P10"
+  ],
+  "pick_rank": [
+    "P02",
+    "P01",
+    "P05",
+    "P04",
+    "P16",
+    "P03",
+    "P17",
+    "P12",
+    "P14",
+    "P11",
+    "P08",
+    "P06",
+    "P10",
+    "P13",
+    "P07",
+    "P15"
+  ],
+  "top_pick": {
+    "node": "P02",
+    "feature": "One 'Copy for agent' action that puts a clean prompt plus the trimmed report on the clipboard."
+  }
+}

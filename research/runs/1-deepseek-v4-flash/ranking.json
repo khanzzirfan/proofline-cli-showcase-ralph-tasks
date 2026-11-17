@@ -1,0 +1,264 @@
+{
+  "agent": "1-deepseek-v4-flash (command-code-research, deepseek/deepseek-v4-flash)",
+  "generated": "2026-11-17",
+  "nodes": [
+    {
+      "id": "P01",
+      "title": "My agent can't see the browser: it can't read the console, network tab or live DOM",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 16,
+      "pick_score": 31,
+      "verified_sources": 4,
+      "overlapping_prs": [],
+      "feature_idea": "Hand the captured console + network to the agent on the clipboard or in the ZIP",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/57034",
+        "https://developer.chrome.com/blog/devtools-for-agents-v1"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "Copy-pasting logs and cURL into the agent by hand is slow, lossy and leaks tokens",
+      "frequency": 5,
+      "severity": 3,
+      "fit": 5,
+      "smallness": 5,
+      "novelty": 4,
+      "pain_score": 16,
+      "pick_score": 35,
+      "verified_sources": 3,
+      "overlapping_prs": [43],
+      "feature_idea": "One-click 'Copy for coding agent' (prompt + trimmed report) to the clipboard",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=48795580",
+        "https://github.com/anthropics/claude-code/issues/18170"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "People want to hand a captured bug straight to an agent, usually over MCP",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 3,
+      "pain_score": 14,
+      "pick_score": 28,
+      "verified_sources": 4,
+      "overlapping_prs": [],
+      "feature_idea": "Local one-command agent hand-off for the captured report (no MCP server)",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=46047931",
+        "https://bugdump.com/blog/ai-agent-screen-recording-frames-mcp"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "A claimed fix needs visual proof: agents open PRs from an issue but nobody can see the bug is gone",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 3,
+      "pain_score": 16,
+      "pick_score": 30,
+      "verified_sources": 6,
+      "overlapping_prs": [48],
+      "feature_idea": "Attach labelled before/after screenshots + an acceptance-evidence block to the issue",
+      "top_sources": [
+        "https://github.com/OpenHands/OpenHands/issues/8372",
+        "https://thunkle.ai/blog/verify-ai-agent-fix"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "Fear of leaking secrets: screenshots, network bodies, URLs and local MCP servers",
+      "frequency": 4,
+      "severity": 5,
+      "fit": 4,
+      "smallness": 3,
+      "novelty": 0,
+      "pain_score": 18,
+      "pick_score": 29,
+      "verified_sources": 3,
+      "overlapping_prs": [42, 41, 38, 37, 44, 31],
+      "feature_idea": "Auto-redact tokens/cards/URL params before the report leaves the browser",
+      "top_sources": [
+        "https://www.infosecurity-magazine.com/news/chrome-extension-ai-engine-act-mcp/",
+        "https://tracebug.dev/blog/jam-dev-alternatives"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "AI PR review has no eyes: a code diff cannot show the UI the change produces",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 3,
+      "novelty": 3,
+      "pain_score": 14,
+      "pick_score": 26,
+      "verified_sources": 5,
+      "overlapping_prs": [],
+      "feature_idea": "Include labelled before/after screenshots + annotations next to the diff for PR review",
+      "top_sources": [
+        "https://safeguard.sh/resources/blog/what-an-ai-code-review-bot-cannot-see",
+        "https://www.sitepoint.com/review-ai-generated-ui-changes/"
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "Terminal agents still can't take a pasted screenshot: images in issues are unusable",
+      "frequency": 5,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 16,
+      "pick_score": 31,
+      "verified_sources": 6,
+      "overlapping_prs": [21],
+      "feature_idea": "Emit an image manifest (paths + captions) so text-only agents can read report screenshots",
+      "top_sources": [
+        "https://github.com/openai/codex/issues/31685",
+        "https://github.com/github/copilot-cli/issues/1276"
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "An agent cannot watch a screen recording: users need frames and a text timeline",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 3,
+      "novelty": 4,
+      "pain_score": 16,
+      "pick_score": 33,
+      "verified_sources": 5,
+      "overlapping_prs": [],
+      "feature_idea": "Extract N key frames + a timestamped timeline from the recording into report.md",
+      "top_sources": [
+        "https://github.com/s17labs/videobug",
+        "https://bugdump.com/blog/ai-agent-screen-recording-frames-mcp"
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "An agent can't reproduce the bug: missing steps, state, auth and data",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 16,
+      "pick_score": 31,
+      "verified_sources": 2,
+      "overlapping_prs": [29, 41],
+      "feature_idea": "Emit an ordered 'repro steps + required state' block for the agent",
+      "top_sources": [
+        "https://negiadventures.github.io/blog/environment-manifests-ai-coding-agents.html",
+        "https://dev.to/yureki_lab/how-i-debug-a-misbehaving-ai-coding-agent-my-4-step-playbook-3m12"
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "Triage and duplicates: reports are either too thin or far too long",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 2,
+      "pain_score": 14,
+      "pick_score": 28,
+      "verified_sources": 3,
+      "overlapping_prs": [49],
+      "feature_idea": "Structured, concise issue-quality template with a right-length control",
+      "top_sources": [
+        "https://modem.ai/guides/best-tools-to-deduplicate-bug-reports",
+        "https://github.com/anthropics/claude-code/issues/12676"
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "Environment and flaky bugs: the agent's environment does not match the reporter's",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 3,
+      "novelty": 2,
+      "pain_score": 12,
+      "pick_score": 23,
+      "verified_sources": 4,
+      "overlapping_prs": [29],
+      "feature_idea": "Add full environment context (browser/OS/viewport/extensions) — mostly covered by #29",
+      "top_sources": [
+        "https://negiadventures.github.io/blog/environment-manifests-ai-coding-agents.html",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/issues/1921"
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "Cost and context: dumping a whole capture into the prompt is big and expensive",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 12,
+      "pick_score": 27,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Size the agent hand-off to a token/frame budget using the existing trim levels",
+      "top_sources": [
+        "https://bugdump.com/blog/ai-agent-screen-recording-frames-mcp",
+        "https://github.com/anthropics/claude-code/issues/13480"
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "Narration and annotation are the de-facto hand-off, but they are not machine-readable",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 12,
+      "pick_score": 27,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Map annotations/narration into ordered agent-readable text next to the event they describe",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=49119880",
+        "https://bugdump.com/blog/whisper-transcribing-narrated-bug-reports"
+      ]
+    },
+    {
+      "id": "P15",
+      "title": "Cloud bug-capture tools cost per seat and hoard your data",
+      "frequency": 3,
+      "severity": 2,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 2,
+      "pain_score": 10,
+      "pick_score": 20,
+      "verified_sources": 4,
+      "overlapping_prs": [],
+      "feature_idea": "Free local capture → agent (competitive context, not a feature target)",
+      "top_sources": [
+        "https://rumana.dev/blog/visual-bug-reporting-tools-compared",
+        "https://github.com/SaintPepsi/openjam"
+      ]
+    }
+  ],
+  "pain_rank": ["P05", "P01", "P04", "P08", "P09", "P02", "P07", "P03", "P06", "P11", "P12", "P13", "P14", "P15"],
+  "pick_rank": ["P02", "P08", "P09", "P07", "P01", "P04", "P05", "P03", "P11", "P13", "P14", "P06", "P12", "P15"],
+  "top_pick": {
+    "node": "P02",
+    "feature": "One-click 'Copy for coding agent' (prompt + trimmed report) to the clipboard"
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "agent": "4-claude-sonnet",
+  "generated": "2026-11-17",
+  "nodes": [
+    {
+      "id": "P01",
+      "title": "The agent can't see my browser: console, network, DOM, what is on screen",
+      "frequency": 5,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 2,
+      "novelty": 2,
+      "pain_score": 18,
+      "pick_score": 30,
+      "verified_sources": 5,
+      "overlapping_prs": [
+        29,
+        41
+      ],
+      "feature_idea": "Make the recording the agent's browser: one-step hand-off of console, network, screenshots",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/57034",
+        "https://github.com/anthropics/claude-code/issues/75632",
+        "https://github.com/anthropics/claude-code/issues/52907"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "I copy console errors, cURL and HAR into the chat by hand, and tokens leak with them",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 1,
+      "pain_score": 14,
+      "pick_score": 27,
+      "verified_sources": 4,
+      "overlapping_prs": [
+        43,
+        32,
+        42,
+        37,
+        31,
+        38,
+        44
+      ],
+      "feature_idea": "Single recording replaces manual copy-paste of errors, cURL and HAR",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/37364",
+        "https://dev.to/branch42-labs/why-my-coding-agent-couldnt-see-my-apps-api-calls-and-the-3-fixes-i-use-4705",
+        "https://forum.cursor.com/t/when-i-try-to-copy-and-paste-debug-terminal-output-the-agent-can-no-longer-see-it/58803"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "I found the bug, now give my agent the exact context in one step",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 5,
+      "smallness": 5,
+      "novelty": 5,
+      "pain_score": 12,
+      "pick_score": 32,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "\"Copy for coding agent\" action: prompt plus trimmed report.md on the clipboard",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=46047931",
+        "https://news.ycombinator.com/item?id=48795580",
+        "https://chromewebstore.google.com/detail/darnly-bug-reports-for-ai/gognoljafcabnmbbpfoeeamcflpbgidj"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "The agent can't see the screenshot in my GitHub issue, or I can't attach one",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 3,
+      "novelty": 4,
+      "pain_score": 12,
+      "pick_score": 25,
+      "verified_sources": 3,
+      "overlapping_prs": [
+        48
+      ],
+      "feature_idea": "Text description of each screenshot (annotation, URL, nearby console line) in the issue body",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/61075",
+        "https://github.com/orgs/community/discussions/153112",
+        "https://community.openai.com/t/codex-ide-extension-no-image-read-hallucinating-playwright-review/1356235"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "The agent says it's fixed and the UI is still broken",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 3,
+      "smallness": 3,
+      "novelty": 4,
+      "pain_score": 16,
+      "pick_score": 29,
+      "verified_sources": 4,
+      "overlapping_prs": [],
+      "feature_idea": "\"How to verify the fix\" checklist in report.md (steps, expected result, failing request)",
+      "top_sources": [
+        "https://community.openai.com/t/codex-ide-extension-no-image-read-hallucinating-playwright-review/1356235",
+        "https://news.ycombinator.com/item?id=50339913",
+        "https://blog.buildbetter.ai/how-to-hand-off-bugs-to-a-coding-agent/"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "Agent PRs don't show before/after screenshots or video of the UI",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 1,
+      "smallness": 2,
+      "novelty": 4,
+      "pain_score": 12,
+      "pick_score": 20,
+      "verified_sources": 5,
+      "overlapping_prs": [],
+      "feature_idea": "Embed key screenshots so the PR author can reuse them as before/after proof",
+      "top_sources": [
+        "https://forum.cursor.com/t/cursor-cloud-agents-do-not-post-their-screenshots-or-videos-to-pr/152974",
+        "https://forum.cursor.com/t/agent-screen-captures-are-not-in-sync/173589",
+        "https://github.com/anthropics/claude-code/issues/101957"
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "CLI agents can't take a pasted screenshot (WSL, SSH, Linux, Windows)",
+      "frequency": 5,
+      "severity": 2,
+      "fit": 1,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 14,
+      "pick_score": 23,
+      "verified_sources": 5,
+      "overlapping_prs": [],
+      "feature_idea": "Prompt tells agent which screenshot file paths to open",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/1361",
+        "https://github.com/anthropics/claude-code/issues/8324",
+        "https://github.com/anthropics/claude-code/issues/12644"
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "One oversized or corrupt screenshot breaks the whole agent conversation",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 3,
+      "smallness": 4,
+      "novelty": 4,
+      "pain_score": 16,
+      "pick_score": 30,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Agent-safe screenshot export: cap longest side and file size",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/13480",
+        "https://github.com/anthropics/claude-code/issues/2939",
+        "https://github.com/microsoft/playwright-mcp/issues/1211"
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "My bug is a screen recording, but the agent can't watch video",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 3,
+      "pain_score": 12,
+      "pick_score": 23,
+      "verified_sources": 2,
+      "overlapping_prs": [],
+      "feature_idea": "Filmstrip of frames around the first error for animation bugs",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/12676",
+        "https://github.com/anthropics/claude-code/issues/14805"
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "Browser tools dump huge snapshots, HAR and logs that burn my tokens",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 4,
+      "novelty": 2,
+      "pain_score": 12,
+      "pick_score": 24,
+      "verified_sources": 4,
+      "overlapping_prs": [],
+      "feature_idea": "Show a token estimate per trim level in the export dialog",
+      "top_sources": [
+        "https://github.com/microsoft/playwright-mcp/issues/889",
+        "https://github.com/microsoft/playwright-mcp/issues/395",
+        "https://github.com/microsoft/playwright-mcp/issues/806"
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "The agent's browser isn't my logged-in session, so it can't reach the buggy page",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 1,
+      "pain_score": 14,
+      "pick_score": 23,
+      "verified_sources": 4,
+      "overlapping_prs": [
+        41,
+        29
+      ],
+      "feature_idea": "Record user role and feature flags in the report",
+      "top_sources": [
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/issues/140",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/issues/825",
+        "https://github.com/anthropics/claude-code/issues/57034"
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "The agent's built-in browser tool says it is connected, then isn't there",
+      "frequency": 5,
+      "severity": 3,
+      "fit": 2,
+      "smallness": 1,
+      "novelty": 3,
+      "pain_score": 16,
+      "pick_score": 24,
+      "verified_sources": 4,
+      "overlapping_prs": [],
+      "feature_idea": "Recorder hand-off that works on any agent, no agent browser needed",
+      "top_sources": [
+        "https://github.com/openai/codex/issues/57641",
+        "https://github.com/openai/codex/issues/39136",
+        "https://github.com/anthropics/claude-code/issues/20298"
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "The agent can't reproduce my bug, so it guesses and fixes the wrong thing",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 16,
+      "pick_score": 31,
+      "verified_sources": 4,
+      "overlapping_prs": [
+        23,
+        25
+      ],
+      "feature_idea": "Deterministic \"Steps to reproduce / Expected vs actual\" block at top of report.md",
+      "top_sources": [
+        "https://blog.buildbetter.ai/how-to-hand-off-bugs-to-a-coding-agent/",
+        "https://news.ycombinator.com/item?id=46047931",
+        "https://news.ycombinator.com/item?id=45215032"
+      ]
+    }
+  ],
+  "pain_rank": [
+    "P01",
+    "P12",
+    "P05",
+    "P08",
+    "P13",
+    "P07",
+    "P02",
+    "P11",
+    "P03",
+    "P04",
+    "P06",
+    "P09",
+    "P10"
+  ],
+  "pick_rank": [
+    "P03",
+    "P13",
+    "P01",
+    "P08",
+    "P05",
+    "P02",
+    "P04",
+    "P10",
+    "P12",
+    "P09",
+    "P11",
+    "P07",
+    "P06"
+  ],
+  "top_pick": {
+    "node": "P03",
+    "feature": "\"Copy for coding agent\" action: prompt plus trimmed report.md on the clipboard"
+  }
+}

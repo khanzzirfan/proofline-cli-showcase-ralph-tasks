@@ -1,0 +1,111 @@
+{
+  "name": "Pain research: 6-minimax-m3",
+  "description": "Independent research run '6-minimax-m3' (command-code-research, minimaxai/minimax-m3). OUTPUT_DIR=<mission>/research/runs/6-minimax-m3. Follow prd-pain-research.md exactly; write only in OUTPUT_DIR; never read other folders under research/runs/.",
+  "branchName": "research/pain",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Plan the search",
+      "description": "OUTPUT_DIR=<mission>/research/runs/6-minimax-m3. Read the 'Read first' files and the Search toolkit. Write plan.md with at least 15 concrete queries across at least 6 source types (include GitHub-reactions, Reddit-top and HN-points API queries) and 5 hypotheses. Follow the Guardrails, Search toolkit and formats in the source PRD (prd-pain-research.md).",
+      "acceptanceCriteria": [
+        "OUTPUT_DIR/plan.md exists with at least 15 queries, at least 6 source types and at least 6 hypotheses, one of them on vision and video",
+        "No file was written outside OUTPUT_DIR"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": " WATCHDOG: never enter or use plan mode; this is a write task. Write files in OUTPUT_DIR directly with your file tools.",
+      "dependsOn": [],
+      "labels": [
+        "research"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-002",
+      "title": "Collect evidence into nodes",
+      "description": "OUTPUT_DIR=<mission>/research/runs/6-minimax-m3. Run the searches with every tool: web search, web fetch, and curl against the GitHub search API (sort=reactions), Reddit search.json (sort=top) and HN Algolia. Cover at least 8 of the popular places listed in the PRD. Write node files and sources.md. Follow the Guardrails, Search toolkit and formats in the source PRD (prd-pain-research.md).",
+      "acceptanceCriteria": [
+        "OUTPUT_DIR/nodes/ has at least 12 P##-*.md files in the node format, each with at least 2 evidence links",
+        "At least 3 nodes are pains not listed in section 5 of 00-context-notes.md",
+        "The vision and video area is searched (PR visual checks, images for agents, bug video for agents): at least 2 nodes, or a section in sources.md explaining why the evidence was not found",
+        "sources.md lists every cited URL; at least 8 of the PRD's popular places are covered and named in sources.md",
+        "Popularity signals (reactions, score, points, comments) are recorded where the source shows them",
+        "No file was written outside OUTPUT_DIR"
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": " WATCHDOG: never enter or use plan mode; this is a write task. Write files in OUTPUT_DIR directly with your file tools.",
+      "dependsOn": [
+        "US-001"
+      ],
+      "labels": [
+        "research"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-003",
+      "title": "Verify and clean",
+      "description": "OUTPUT_DIR=<mission>/research/runs/6-minimax-m3. Open every cited URL with web fetch or curl. Mark verified, unverified or dropped; merge duplicates; drop claims without a verified source. Follow the Guardrails, Search toolkit and formats in the source PRD (prd-pain-research.md).",
+      "acceptanceCriteria": [
+        "sources.md starts with a line 'verified: N, unverified: N, dropped: N' with real counts",
+        "Every node has a status field and no node relies only on unverified or dropped sources for its main claim",
+        "No file was written outside OUTPUT_DIR"
+      ],
+      "priority": 3,
+      "passes": true,
+      "notes": " WATCHDOG: never enter or use plan mode; this is a write task. Write files in OUTPUT_DIR directly with your file tools.",
+      "dependsOn": [
+        "US-002"
+      ],
+      "labels": [
+        "research"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-004",
+      "title": "Score and rank",
+      "description": "OUTPUT_DIR=<mission>/research/runs/6-minimax-m3. Score every node with the rubric and write ranking.md (two tables) and ranking.json (exact schema). Follow the Guardrails, Search toolkit and formats in the source PRD (prd-pain-research.md).",
+      "acceptanceCriteria": [
+        "ranking.md has a pain_score table and a pick_score table, plus reasons for the top five",
+        "`python3 -c \"import json;json.load(open('ranking.json'))\"` succeeds in OUTPUT_DIR and the JSON matches the schema (pain_score=2f+2s, pick_score=2f+2s+2fit+small+novelty)",
+        "No file was written outside OUTPUT_DIR"
+      ],
+      "priority": 4,
+      "passes": true,
+      "notes": " WATCHDOG: never enter or use plan mode; this is a write task. Write files in OUTPUT_DIR directly with your file tools.",
+      "dependsOn": [
+        "US-003"
+      ],
+      "labels": [
+        "research"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-005",
+      "title": "Recommend and summarise",
+      "description": "OUTPUT_DIR=<mission>/research/runs/6-minimax-m3. Write recommendation.md (top 3 feature specs for Session Recorder) and run-summary.md (method, counts, evidence weaknesses). Follow the Guardrails, Search toolkit and formats in the source PRD (prd-pain-research.md).",
+      "acceptanceCriteria": [
+        "recommendation.md has 3 features, each with pain nodes cited, UX, files likely touched (real paths in the extension), test plan, risks and the open PRs it must not duplicate",
+        "run-summary.md gives counts of queries, sources, verified sources and nodes, and names which tools worked (web search, web fetch, GitHub API, Reddit, HN)",
+        "No file was written outside OUTPUT_DIR"
+      ],
+      "priority": 5,
+      "passes": true,
+      "notes": " WATCHDOG: never enter or use plan mode; this is a write task. Write files in OUTPUT_DIR directly with your file tools.",
+      "dependsOn": [
+        "US-004"
+      ],
+      "labels": [
+        "research"
+      ],
+      "completionNotes": "Completed by agent"
+    }
+  ],
+  "metadata": {
+    "sourcePrd": "../../prd-pain-research.md",
+    "updatedAt": "2026-11-17T01:21:45.385Z"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "SDK-TS: iterExportReviews paginator",
+  "description": "Add ProoflineClient.iterExportReviews to @proofline/sdk: an async generator over exportReviews pages that follows nextCursor safely, mirroring iterReviews. Never commit or push.",
+  "branchName": "ralph/iter-export-reviews",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Implement iterExportReviews",
+      "description": "As an analytics engineer, I want to iterate every export page without hand-writing cursor handling, so that a repeated cursor cannot loop forever. Add async *iterExportReviews(parameters, { maxPages }) to ProoflineClient in src/index.ts, right after exportReviews. Follow the Guardrails and the steps for this story in the source PRD (prd-iter-export-reviews.md).",
+      "acceptanceCriteria": [
+        "iterExportReviews is a public method on ProoflineClient returning AsyncGenerator<ExportPage>",
+        "Follows nextCursor until null; only query.cursor changes between calls; starts from parameters.query.cursor when given",
+        "Repeated or already-seen cursor throws the protocol ProoflineError; exceeding maxPages (default 100) throws the pagination-limit ProoflineError",
+        "No generated file changed (git diff --stat shows only src/index.ts and optionally src/exports.ts)",
+        "`pnpm lint` passes",
+        "`pnpm typecheck` passes",
+        "`pnpm build` then `pnpm test` passes (all tests, offline)"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": "",
+      "dependsOn": [],
+      "labels": [
+        "feature"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-002",
+      "title": "Tests for iterExportReviews",
+      "description": "As a maintainer, I want the paginator covered so regressions in cursor handling are caught. Add tests to tests/http.test.mjs next to the existing export tests. Follow the Guardrails and the steps for this story in the source PRD (prd-iter-export-reviews.md).",
+      "acceptanceCriteria": [
+        "New tests cover: CSV multi-page, NDJSON multi-page, initial and opaque cursor passed back exactly, repeated cursor error, maxPages error, 403 on page 2 propagates without the token in the error text",
+        "notes records a mutation check (seen-cursor check removed -> a test fails -> restored)",
+        "`pnpm lint` passes",
+        "`pnpm typecheck` passes",
+        "`pnpm build` then `pnpm test` passes (all tests, offline)"
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": "",
+      "dependsOn": [
+        "US-001"
+      ],
+      "labels": [
+        "tests"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-003",
+      "title": "README update",
+      "description": "As a user, I want the README 'Review exports' section to show the iterExportReviews helper instead of a manual cursor loop. Follow the Guardrails and the steps for this story in the source PRD (prd-iter-export-reviews.md).",
+      "acceptanceCriteria": [
+        "README 'Review exports' has a for-await example using iterExportReviews and mentions maxPages default 100 and the repeated-cursor error",
+        "No other README section changed",
+        "`pnpm lint` passes",
+        "`pnpm typecheck` passes",
+        "`pnpm build` then `pnpm test` passes (all tests, offline)"
+      ],
+      "priority": 3,
+      "passes": true,
+      "notes": "",
+      "dependsOn": [
+        "US-002"
+      ],
+      "labels": [
+        "docs"
+      ],
+      "completionNotes": "Completed by agent"
+    }
+  ],
+  "metadata": {
+    "sourcePrd": "prd-iter-export-reviews.md",
+    "updatedAt": "2026-11-16T21:53:10.807Z"
+  }
+}

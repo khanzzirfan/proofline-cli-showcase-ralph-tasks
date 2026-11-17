@@ -1,0 +1,248 @@
+{
+  "agent": "3-gpt-6-luna",
+  "generated": "2026-11-16",
+  "nodes": [
+    {
+      "id": "P01",
+      "title": "“Claude can’t see the running page I need it to fix”",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 4,
+      "novelty": 4,
+      "pain_score": 16,
+      "pick_score": 34,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Add a compact, one-click agent handoff that bundles the captured browser state and tells the agent how to use the evidence without claiming live browser access.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/57034",
+        "https://github.com/anthropics/claude-code/issues/75632"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "“I keep copying browser errors into the agent by hand”",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 5,
+      "smallness": 5,
+      "novelty": 4,
+      "pain_score": 14,
+      "pick_score": 33,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Provide a copy-for-agent action that puts a concise evidence summary and prompt on the clipboard alongside the existing ZIP export.",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=48795580",
+        "https://github.com/anthropics/claude-code/issues/57034"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "“The agent invents API behavior because my browser session is elsewhere”",
+      "frequency": 3,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 14,
+      "pick_score": 31,
+      "verified_sources": 3,
+      "overlapping_prs": [32, 43],
+      "feature_idea": "Make captured request and response evidence easy to locate and understand in the agent report, without adding new cURL or HAR export behavior.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/52907",
+        "https://dev.to/branch42-labs/why-my-coding-agent-couldnt-see-my-apps-api-calls-and-the-3-fixes-i-use-4705"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "“My cloud agent can’t run the browser needed to verify frontend work”",
+      "frequency": 2,
+      "severity": 4,
+      "fit": 3,
+      "smallness": 3,
+      "novelty": 4,
+      "pain_score": 12,
+      "pick_score": 25,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Emphasize the portable recorded-session report as context a cloud agent can inspect after the browser session, while stating that it does not provide a runnable browser.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/75632",
+        "https://github.com/anthropics/claude-code/issues/11791"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "“The browser tool is configured, but the agent still can’t use it”",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 4,
+      "pain_score": 12,
+      "pick_score": 28,
+      "verified_sources": 1,
+      "overlapping_prs": [],
+      "feature_idea": "Offer the existing offline evidence export as an explicit fallback when live browser-agent integration is unavailable.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/21371"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "“The agent’s browser tools return data it can’t use”",
+      "frequency": 2,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 10,
+      "pick_score": 25,
+      "verified_sources": 1,
+      "overlapping_prs": [32, 43],
+      "feature_idea": "Improve report navigation from a captured request summary to its existing response/body assets, without creating a second HAR or cURL flow.",
+      "top_sources": [
+        "https://dev.to/dedupedai/let-claude-code-or-cursor-debug-your-page-in-a-real-chrome-browser-ldc"
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "“A code change or passing test doesn’t show me the UI fix worked”",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 4,
+      "pain_score": 16,
+      "pick_score": 32,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Add a report handoff prompt that presents the recorded failure and asks the coding agent to reproduce it and attach post-fix browser evidence.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/57034",
+        "https://news.ycombinator.com/item?id=45293848"
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "“The agent says it added screenshots, but the PR evidence is missing or broken”",
+      "frequency": 2,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 4,
+      "pain_score": 10,
+      "pick_score": 26,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Make the report’s screenshot manifest and linked image artifacts easy to verify before attaching them to an issue or PR.",
+      "top_sources": [
+        "https://github.com/orgs/community/discussions/169913",
+        "https://github.com/anthropics/claude-code/issues/75632"
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "“Some coding-agent workflows still need a visual artifact they can actually inspect”",
+      "frequency": 2,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 2,
+      "pain_score": 10,
+      "pick_score": 24,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Clarify in the exported agent prompt that screenshot files are included and identify which asset paths to inspect.",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/52907",
+        "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/provide-visual-inputs"
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "“Copying browser requests can leak credentials into an agent prompt”",
+      "frequency": 3,
+      "severity": 5,
+      "fit": 4,
+      "smallness": 2,
+      "novelty": 1,
+      "pain_score": 16,
+      "pick_score": 27,
+      "verified_sources": 3,
+      "overlapping_prs": [31, 37, 38, 42],
+      "feature_idea": "Do not add a new general redaction feature in this run; retain user-controlled review and avoid exposing report contents through a local MCP service.",
+      "top_sources": [
+        "https://dev.to/branch42-labs/why-my-coding-agent-couldnt-see-my-apps-api-calls-and-the-3-fixes-i-use-4705",
+        "https://www.infosecurity-magazine.com/news/chrome-extension-ai-engine-act-mcp/"
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "“A full browser network dump wastes agent context on noise”",
+      "frequency": 2,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 2,
+      "pain_score": 10,
+      "pick_score": 24,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Prefer an agent-facing compact report summary with drill-down references instead of another network trimming mechanism.",
+      "top_sources": [
+        "https://dev.to/branch42-labs/why-my-coding-agent-couldnt-see-my-apps-api-calls-and-the-3-fixes-i-use-4705",
+        "https://github.com/rbsriram/heckle"
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "“A browser crawler can click around but still miss the bug that matters”",
+      "frequency": 2,
+      "severity": 4,
+      "fit": 5,
+      "smallness": 5,
+      "novelty": 3,
+      "pain_score": 12,
+      "pick_score": 30,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "Put the recorded narration, annotations and expected-versus-observed notes prominently in the agent handoff prompt.",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=45293848",
+        "https://github.com/anthropics/claude-code/issues/52907"
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "“A local agent bridge can expose more browser or machine data than intended”",
+      "frequency": 2,
+      "severity": 5,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 2,
+      "pain_score": 14,
+      "pick_score": 24,
+      "verified_sources": 3,
+      "overlapping_prs": [31, 37, 38, 42],
+      "feature_idea": "Do not introduce a local MCP bridge as the handoff path; keep report sharing explicit and offline by default.",
+      "top_sources": [
+        "https://www.infosecurity-magazine.com/news/chrome-extension-ai-engine-act-mcp/",
+        "https://github.com/anthropics/claude-code/issues/57034"
+      ]
+    }
+  ],
+  "pain_rank": [
+    "P01", "P07", "P10", "P02", "P03", "P13", "P04", "P05", "P12", "P06", "P08", "P09", "P11"
+  ],
+  "pick_rank": [
+    "P01", "P02", "P07", "P03", "P12", "P05", "P10", "P08", "P04", "P06", "P09", "P11", "P13"
+  ],
+  "top_pick": {
+    "node": "P01",
+    "feature": "Add a compact, one-click agent handoff that bundles the captured browser state and tells the agent how to use the evidence without claiming live browser access."
+  }
+}

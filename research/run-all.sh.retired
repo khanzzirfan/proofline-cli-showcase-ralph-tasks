@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Runs the pain research PRD with four agents, one after another, each in its own folder.
+# Usage: research/run-all.sh [run-name ...]   (default: all four, in order)
+# Logs: research/runs/<name>/ralph.log; one status line per run in research/runs/queue.log.
+set -u
+cd "$(dirname "$0")"
+R=$(pwd)
+LOG="$R/runs/queue.log"
+RUNS=("$@")
+[ ${#RUNS[@]} -eq 0 ] && RUNS=(1-deepseek-v4-flash 2-minimax-m3.1-flash 3-gpt-6-luna 4-claude-sonnet)
+
+agent_of() { sed -n 's/^agent = "\(.*\)"/\1/p' "$R/runs/$1/.ralph-tui/config.toml"; }
+model_of() { sed -n 's/^model = "\(.*\)"/\1/p' "$R/runs/$1/.ralph-tui/config.toml"; }
+passes() { python3 -c 'import json,sys;s=json.load(open(sys.argv[1]))["userStories"];print(f"{sum(x["passes"] for x in s)}/{len(s)}")' "$R/runs/$1/prd.json"; }
+
+for name in "${RUNS[@]}"; do
+  dir="$R/runs/$name"
+  agent=$(agent_of "$name"); model=$(model_of "$name")
+  echo "$(date '+%F %T') START $name agent=$agent model=$model ($(passes "$name"))" >> "$LOG"
+  start=$(date +%s)
+  (cd "$dir" && ralph-tui run --prd ./prd.json --iterations 15 --headless --verify \
+      --agent "$agent" --model "$model" >> "$dir/ralph.log" 2>&1)
+  code=$?
+  echo "$(date '+%F %T') END $name exit=$code passes=$(passes "$name") minutes=$(( ($(date +%s) - start) / 60 ))" >> "$LOG"
+done
+python3 "$R/compare.py" >> "$LOG" 2>&1 && echo "$(date '+%F %T') COMPARE written to compare/comparison.md" >> "$LOG"
+echo "$(date '+%F %T') ALL DONE" >> "$LOG"

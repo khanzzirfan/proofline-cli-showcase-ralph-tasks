@@ -1,0 +1,352 @@
+{
+  "agent": "8-claude-opus",
+  "generated": "2026-11-17",
+  "nodes": [
+    {
+      "id": "P01",
+      "title": "My coding agent can't see the running app: no page, console or network",
+      "frequency": 5,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 2,
+      "novelty": 2,
+      "pain_score": 18,
+      "pick_score": 30,
+      "verified_sources": 7,
+      "overlapping_prs": [],
+      "feature_idea": "Position the report.md hand-off as the 'frozen browser snapshot' for agents with no live browser (docs + report header)",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/57034",
+        "https://github.com/anthropics/claude-code/issues/75632",
+        "https://github.com/anthropics/claude-code/issues/52907"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "I copy and paste console logs into the agent all day",
+      "frequency": 5,
+      "severity": 3,
+      "fit": 5,
+      "smallness": 5,
+      "novelty": 4,
+      "pain_score": 16,
+      "pick_score": 35,
+      "verified_sources": 6,
+      "overlapping_prs": [
+        43
+      ],
+      "feature_idea": "'Copy for coding agent' button: puts a ready prompt plus the trimmed report.md on the clipboard in one click",
+      "top_sources": [
+        "https://forum.cursor.com/t/i-made-a-vscode-extension-that-forwards-frontend-errors-back-to-composer/50807",
+        "https://forum.cursor.com/t/feedback-loop-for-errors/92299",
+        "https://forum.cursor.com/t/helping-cursor-extract-or-interrogate-chrome-dev-tools-js-console-logs/144346"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "I already found the bug; let me hand the agent exactly what I saw",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 5,
+      "smallness": 4,
+      "novelty": 4,
+      "pain_score": 12,
+      "pick_score": 30,
+      "verified_sources": 6,
+      "overlapping_prs": [],
+      "feature_idea": "Ship an agent-ready prompt.md / AGENTS-style instruction file inside the ZIP",
+      "top_sources": [
+        "https://news.ycombinator.com/item?id=46047931",
+        "https://github.com/microsoft/playwright-mcp/issues/734",
+        "https://jam.dev/docs/jam-mcp"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "Vague bug reports make agents ship confident fixes for the wrong problem",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 16,
+      "pick_score": 31,
+      "verified_sources": 5,
+      "overlapping_prs": [
+        48,
+        29
+      ],
+      "feature_idea": "Fixed-shape 'Agent brief' block in report.md/issue: expected vs actual, failing request, route and click-target cues",
+      "top_sources": [
+        "https://overreacted.io/how-to-fix-any-bug/",
+        "https://dev.to/skyestrela/stop-asking-ai-coding-agents-to-fix-vague-bugs-4ji6",
+        "https://www.alphaxiv.org/abs/2607.09553"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "Logs and sessions I hand to agents carry secrets and tokens",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 0,
+      "pain_score": 16,
+      "pick_score": 24,
+      "verified_sources": 5,
+      "overlapping_prs": [
+        31,
+        37,
+        38,
+        42,
+        44
+      ],
+      "feature_idea": "None new: redaction is covered by five open PRs",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/32733",
+        "https://github.com/anthropics/claude-code/issues/401",
+        "https://dev.to/skyestrela/stop-asking-ai-coding-agents-to-fix-vague-bugs-4ji6"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "A fake error or bug report can hijack the agent that reads it",
+      "frequency": 2,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 5,
+      "novelty": 5,
+      "pain_score": 12,
+      "pick_score": 30,
+      "verified_sources": 3,
+      "overlapping_prs": [],
+      "feature_idea": "'Untrusted evidence' preamble in report.md and issue body, with page-controlled text fenced",
+      "top_sources": [
+        "https://tenetsecurity.ai/blog/agentjacking-coding-agents-with-fake-sentry-errors/",
+        "https://news.ycombinator.com/item?id=48507994",
+        "https://news.ycombinator.com/item?id=47391875"
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "The agent says 'fixed' without checking, and the bug is still there",
+      "frequency": 4,
+      "severity": 5,
+      "fit": 4,
+      "smallness": 4,
+      "novelty": 4,
+      "pain_score": 18,
+      "pick_score": 34,
+      "verified_sources": 6,
+      "overlapping_prs": [
+        22
+      ],
+      "feature_idea": "'Acceptance check' section in report.md/issue: the exact errors and failing requests that must be gone after the fix",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/80950",
+        "https://github.com/anthropics/claude-code/issues/37818",
+        "https://github.com/anthropics/claude-code/issues/66054"
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "PRs from agents carry no visual proof, and reviewers can't see the UI change",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 2,
+      "novelty": 3,
+      "pain_score": 12,
+      "pick_score": 23,
+      "verified_sources": 5,
+      "overlapping_prs": [
+        49
+      ],
+      "feature_idea": "Record an 'after' session and post it as verification proof on the original issue",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/101957",
+        "https://github.com/anthropics/claude-code/issues/26831",
+        "https://www.ssw.com.au/rules/done-video-by-ai"
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "I can't get a screenshot into my CLI agent",
+      "frequency": 5,
+      "severity": 2,
+      "fit": 3,
+      "smallness": 4,
+      "novelty": 1,
+      "pain_score": 14,
+      "pick_score": 25,
+      "verified_sources": 9,
+      "overlapping_prs": [],
+      "feature_idea": "Docs: tell CLI agents to open screenshots by path from the unzipped report",
+      "top_sources": [
+        "https://github.com/github/copilot-cli/issues/476",
+        "https://github.com/github/copilot-cli/issues/1217",
+        "https://github.com/anthropics/claude-code/issues/1361"
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "My agent can't watch the bug video, so I screenshot frames by hand",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 5,
+      "smallness": 3,
+      "novelty": 5,
+      "pain_score": 14,
+      "pick_score": 32,
+      "verified_sources": 5,
+      "overlapping_prs": [
+        21
+      ],
+      "feature_idea": "Extract key frames from the tab video around clicks, errors and annotations into frames/*.jpg and list them in the report timeline",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/12676",
+        "https://github.com/anthropics/claude-code/issues/2614",
+        "https://github.com/anthropics/claude-code/issues/14805"
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "Browser tools flood the agent's context and burn tokens",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 4,
+      "novelty": 1,
+      "pain_score": 14,
+      "pick_score": 25,
+      "verified_sources": 8,
+      "overlapping_prs": [],
+      "feature_idea": "Per-section token counts in the report.md header",
+      "top_sources": [
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/issues/171",
+        "https://github.com/microsoft/playwright-mcp/issues/1216",
+        "https://github.com/microsoft/playwright-mcp/issues/806"
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "Too many or too-large screenshots break the agent session",
+      "frequency": 4,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 4,
+      "novelty": 3,
+      "pain_score": 14,
+      "pick_score": 27,
+      "verified_sources": 6,
+      "overlapping_prs": [],
+      "feature_idea": "Capped 'key screenshots' list (e.g. 20) in report.md so agents open only the images that matter",
+      "top_sources": [
+        "https://github.com/anthropics/claude-code/issues/13480",
+        "https://github.com/anthropics/claude-code/issues/2939",
+        "https://github.com/anthropics/claude-code/issues/19031"
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "The agent's browser isn't logged in, so it can't reach the bug",
+      "frequency": 3,
+      "severity": 3,
+      "fit": 3,
+      "smallness": 3,
+      "novelty": 1,
+      "pain_score": 12,
+      "pick_score": 22,
+      "verified_sources": 6,
+      "overlapping_prs": [
+        41
+      ],
+      "feature_idea": "State in the report that the session was authenticated (role/origin), no cookies exported",
+      "top_sources": [
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/issues/140",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/issues/825",
+        "https://github.com/microsoft/playwright-mcp/issues/403"
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "Devs (and agents) can't reproduce the bug QA reported",
+      "frequency": 4,
+      "severity": 4,
+      "fit": 4,
+      "smallness": 2,
+      "novelty": 1,
+      "pain_score": 16,
+      "pick_score": 27,
+      "verified_sources": 2,
+      "overlapping_prs": [
+        29,
+        25
+      ],
+      "feature_idea": "None new: core use case already served",
+      "top_sources": [
+        "https://overreacted.io/how-to-fix-any-bug/",
+        "https://forum.cursor.com/t/debug-mode-browser-fetch-to-ingest-server-127-0-0-1-7772-never-writes-debug-sessionid-log-agent-cant-read-runtime-evidence/167378"
+      ]
+    },
+    {
+      "id": "P15",
+      "title": "Let the agent replay the steps I recorded instead of re-exploring",
+      "frequency": 2,
+      "severity": 3,
+      "fit": 4,
+      "smallness": 1,
+      "novelty": 1,
+      "pain_score": 10,
+      "pick_score": 20,
+      "verified_sources": 5,
+      "overlapping_prs": [
+        22
+      ],
+      "feature_idea": "Emit a replay script from recorded steps (large; #22 closed as too big)",
+      "top_sources": [
+        "https://github.com/microsoft/playwright-mcp/issues/734",
+        "https://github.com/microsoft/playwright-mcp/issues/280",
+        "https://github.com/microsoft/playwright-mcp/issues/1645"
+      ]
+    }
+  ],
+  "pain_rank": [
+    "P07",
+    "P01",
+    "P02",
+    "P04",
+    "P14",
+    "P05",
+    "P10",
+    "P12",
+    "P09",
+    "P11",
+    "P03",
+    "P06",
+    "P08",
+    "P13",
+    "P15"
+  ],
+  "pick_rank": [
+    "P02",
+    "P07",
+    "P10",
+    "P04",
+    "P01",
+    "P03",
+    "P06",
+    "P14",
+    "P12",
+    "P09",
+    "P11",
+    "P05",
+    "P08",
+    "P13",
+    "P15"
+  ],
+  "top_pick": {
+    "node": "P02",
+    "feature": "'Copy for coding agent' button: puts a ready prompt plus the trimmed report.md on the clipboard in one click"
+  }
+}

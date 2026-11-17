@@ -1,0 +1,33 @@
+2026-11-17 09:15:13 START 1-deepseek-v4-flash agent=command-code-research model=deepseek/deepseek-v4-flash (0/5)
+2026-11-17 09:37:29 START turn 2 2-minimax-m3.1-flash agent=command-code-research model=minimax/minimax-m3.1-flash (0/5)
+2026-11-17 09:37:34 END turn 1 1-deepseek-v4-flash (watched) passes=5 / 5
+2026-11-17 10:42:32 END turn 2 2-minimax-m3.1-flash exit=0 passes=5/5 minutes=65
+2026-11-17 10:42:32 CHAIN turn 2 exit=0
+2026-11-17 10:42:32 START turn 3 3-gpt-6-luna agent=command-code-research model=gpt-6-luna (0/5)
+2026-11-17 10:44:06 END turn 3 3-gpt-6-luna exit=0 passes=0/5 minutes=1
+2026-11-17 10:44:06 CHAIN turn 3 exit=0
+2026-11-17 10:44:06 START turn 4 4-claude-sonnet agent=claude model=sonnet (0/5)
+2026-11-17 10:44:09 WATCHDOG turn 3 gpt-6-luna stopped after 7 iterations: agent says it is in read-only plan mode despite --yolo; chain paused for a fix
+2026-11-17 10:45:34 WATCHDOG fix: GPT turns 3 and 7 now use agent command-code-research-std (no --tools-all, which disabled file writes for gpt-6-luna; web_search and web_fetch still available). Turns 3 and 4 reset; logs kept as ralph.aborted-*.log
+2026-11-17 10:45:46 START turn 3 3-gpt-6-luna agent=command-code-research-std model=gpt-6-luna (0/5)
+2026-11-17 11:01:38 END turn 3 3-gpt-6-luna exit=0 passes=5/5 minutes=15
+2026-11-17 11:01:38 CHAIN turn 3 exit=0
+2026-11-17 11:01:38 START turn 4 4-claude-sonnet agent=claude model=sonnet (0/5)
+2026-11-17 11:20:09 END turn 4 4-claude-sonnet exit=0 passes=5/5 minutes=18
+2026-11-17 11:20:09 CHAIN turn 4 exit=0
+2026-11-17 11:20:09 START turn 5 5-deepseek-v4-pro agent=command-code-research model=deepseek/deepseek-v4-pro (0/5)
+2026-11-17 11:38:44 END turn 5 5-deepseek-v4-pro exit=0 passes=5/5 minutes=18
+2026-11-17 11:38:45 CHAIN turn 5 exit=0
+2026-11-17 11:38:45 START turn 6 6-minimax-m3 agent=command-code-research model=minimaxai/minimax-m3 (0/5)
+2026-11-17 11:41:09 WATCHDOG turn 6 minimax-m3: iteration 1 entered plan mode (tools-all exposes it) and stopped after 8s; added a no-plan-mode note to its unpassed stories; iteration 2 is working
+2026-11-17 12:21:46 END turn 6 6-minimax-m3 exit=0 passes=5/5 minutes=43
+2026-11-17 12:21:46 CHAIN turn 6 exit=0
+2026-11-17 12:21:46 START turn 7 7-gpt-6-astra agent=command-code-research-std model=gpt-6-astra (0/5)
+2026-11-17 12:21:47 END turn 7 7-gpt-6-astra exit=1 passes=0/5 minutes=0
+2026-11-17 12:21:47 CHAIN turn 7 exit=0
+2026-11-17 12:21:47 CHAIN PAUSED: turn 7 passed no story; fix it, then rerun run-chain.sh from turn 7
+2026-11-17 13:41:27 WATCHDOG turn 7 gpt-6-astra skipped by owner (model not in plan); running turn 8 opus
+2026-11-17 13:41:27 START turn 8 8-claude-opus agent=claude model=opus (0/5)
+2026-11-17 14:06:58 END turn 8 8-claude-opus exit=0 passes=5/5 minutes=25
+2026-11-17 14:06:59 CHAIN turn 8 exit=0
+2026-11-17 14:06:59 CHAIN DONE (8)
